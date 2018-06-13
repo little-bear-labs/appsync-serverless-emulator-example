@@ -1,0 +1,21 @@
+{
+  "name": "appsync-simulator-test-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "neutrino": "^8.2.3",
+    "neutrino-preset-conduit": "^3.0.0"
+  },
+  "dependencies": {
+    "graphql-tag": "2.9.2",
+    "aws-amplify": "0.3.3",
+    "aws-amplify-react": "0.1.43",
+    "aws-appsync": "ConduitVC/aws-appsync",
+    "aws-appsync-react": "^1.0.14",
+    "react": "^16.3.2",
+    "react-apollo": "^2.1.4",
+    "react-dom": "^16.3.2",
+    "serverless-appsync-plugin": "^1.0.0"
+  }
+}
