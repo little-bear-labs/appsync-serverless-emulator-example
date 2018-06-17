@@ -5,6 +5,9 @@ This repository contains the test code for the appsync emulator.
 We leverage https://github.com/sid88in/serverless-appsync-plugin to provide
 the configuration and deployment model for appsync.
 
+This is _alpha_ quality and we expect bugs. To enable logging export the following
+environment variable: `NODE_DEBUG=appsync*`
+
 ## Usage
 
 After running `yarn`

@@ -6,7 +6,7 @@ $util.qr($ctx.arguments.response.put('id', $util.autoId()))
     "version" : "2018-05-29",
     "operation" : "BatchPutItem",
     "tables": {
-    	"QuoteRequest-emulator": $util.toJson($requests),
-        "QuoteResponse-emulator": $util.toJson($responses),
+    	"QuoteRequest-emulator-v2": $util.toJson($requests),
+      "QuoteResponse-emulator-v2": $util.toJson($responses),
     }
 }

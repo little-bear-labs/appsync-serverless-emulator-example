@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@conduitvc/appsync-emulator-serverless": "^0.2.1",
+    "@conduitvc/appsync-emulator-serverless": "^0.2.2",
     "neutrino": "^8.2.3",
     "neutrino-preset-conduit": "^3.0.0",
     "serverless": "^1.27.3"

@@ -14,7 +14,16 @@ const requestsGql = gql`
 
 const ListCommodities = () => (
   <Subscription subscription={requestsGql}>
-    {({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>}
+    {({ data, error }) => (
+      <div>
+        <div>
+          <h3>List Commodity Data:</h3>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+          <h3>List Commodity Error:</h3>
+          <pre>{JSON.stringify(error, null, 2)}</pre>
+        </div>
+      </div>
+    )}
   </Subscription>
 );
 
@@ -25,7 +34,16 @@ const neverNotifySubGql = gql`
 `
 const ListNotify = () => (
   <Subscription subscription={neverNotifySubGql}>
-    {({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>}
+  {({ data, error }) => (
+    <div>
+      <div>
+        <h3>Notify Data:</h3>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
+        <h3>Notify Error:</h3>
+        <pre>{JSON.stringify(error, null, 2)}</pre>
+      </div>
+    </div>
+  )}
   </Subscription>
 );
 
@@ -60,7 +78,7 @@ const BatchCreateQuoteRequest = () => (
             create();
           }}
         >
-          Create batch quote
+          Create batch quote (no subscription)
         </button>
         <pre>
           BATCH OUT:
@@ -92,7 +110,7 @@ const CreateQuoteRequest = () => (
             create({ variables: { input: { commodity: "foo", amount: 100 } } });
           }}
         >
-          Create quote
+          Create quote (creates subscription event)
         </button>
         <pre>
           OUT:
@@ -119,7 +137,7 @@ const CreateNotify = () => (
             create();
           }}
         >
-          Create notify
+          Create notify (should not trigger subscription!)
         </button>
         <pre>
           OUT:
