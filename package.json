@@ -4,10 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@conduitvc/appsync-emulator-serverless": "^0.2.0",
+    "@conduitvc/appsync-emulator-serverless": "^0.2.1",
     "neutrino": "^8.2.3",
     "neutrino-preset-conduit": "^3.0.0",
     "serverless": "^1.27.3"
+  },
+  "scripts": {
+    "start": "neutrino start",
+    "start-emulator": "docker-compose up -d && appsync-emulator --port 62222"
   },
   "dependencies": {
     "aws-amplify": "0.3.3",
