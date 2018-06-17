@@ -29,6 +29,7 @@ type Mutation {
   putQuoteResponse(id: ID, input: QuoteResponseInput!): QuoteResponse!
   updateQuoteResponse(id: ID!, input: QuoteResponseInput!): QuoteResponse!
   deleteQuoteResponse(id: ID!): Boolean
+  neverNotify: String!
 }
 
 type Subscription {
@@ -36,6 +37,8 @@ type Subscription {
     @aws_subscribe(mutations: ["putQuoteRequest"])
   subscribeToPutQuoteResponse: QuoteResponse!
     @aws_subscribe(mutations: ["putQuoteResponse"])
+  neverNotify: String!
+    @aws_subscribe(mutations: ["neverNotify"])
 }
 
 type BatchPut {
@@ -49,7 +52,9 @@ type CognitoInfo {
   username: String!
   # XXX: Can't test claims...
   sourceIp: [String!]!
+  claims: String!
   defaultAuthStrategy: String!
+  groups: [String]
 }
 
 type LambdaInfo {

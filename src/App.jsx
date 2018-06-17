@@ -8,9 +8,9 @@ import { ApolloProvider } from 'react-apollo';
 import Roundtrip from './Roundtrip';
 
 const client = new AWSAppSyncClient({
-  url: 'http://localhost:62222/graphql',
-  // url:
-  //   'https://2dr36dk5sjelxeqtcbrvztvoyi.appsync-api.us-east-1.amazonaws.com/graphql',
+  // url: 'http://localhost:62222/graphql',
+  url:
+    'https://sgdhr5dvovavfa6frgekxw3fi4.appsync-api.us-east-1.amazonaws.com/graphql',
   region: 'us-east-1',
   auth: {
     type: AUTH_TYPE.AMAZON_COGNITO_USER_POOLS,
@@ -40,4 +40,4 @@ class App extends Component {
   }
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, { includeGreetings: true });

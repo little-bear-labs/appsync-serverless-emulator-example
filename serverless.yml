@@ -1,4 +1,4 @@
-service: appsync-bootstrap-test
+service: appsync-bootstrap-test-v2
 frameworkVersion: '>=1.21.0 <2.0.0'
 provider:
   name: aws
@@ -7,6 +7,9 @@ provider:
   region: us-east-1
 plugins:
   - serverless-appsync-plugin
+package:
+  exclude:
+    - node_modules/**
 custom:
   accountId: 229055845648
   appSync:
@@ -43,6 +46,11 @@ custom:
         field: batchPutQuotes
         request: batchput-request.txt
         response: batchput-response.txt
+      - dataSource: SubscriberPassthrough
+        type: Mutation
+        field: neverNotify
+        request: nevernotify-request.txt
+        response: result-response.txt
       - dataSource: QuoteRequest
         type: Mutation
         field: badBatchPutQuotes
@@ -63,6 +71,11 @@ custom:
         field: subscribeToPutQuoteRequest
         request: subscribePassthrough-request.txt
         response: result-response.txt
+      - dataSource: SubscriberPassthrough
+        type: Subscription
+        field: neverNotify
+        request: subscribePassthrough-request.txt
+        response: null-response.txt
       - dataSource: QuoteResponse
         type: Query
         field: QuoteResponseById
@@ -109,13 +122,13 @@ custom:
         name: QuoteRequest
         description: QuoteRequest description
         config:
-          tableName: QuoteRequest-emulator
+          tableName: "QuoteRequest-emulator-v2"
           serviceRoleArn: { Fn::GetAtt: [AppSyncDynamoDBServiceRole, Arn] }
       - type: AMAZON_DYNAMODB
         name: QuoteResponse
         description: QuoteResponse description
         config:
-          tableName: QuoteResponse-emulator
+          tableName: QuoteResponse-emulator-v2
           serviceRoleArn: { Fn::GetAtt: [AppSyncDynamoDBServiceRole, Arn] }
       - type: NONE
         name: SubscriberPassthrough
@@ -146,7 +159,7 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: QuoteRequest-emulator
+        TableName: QuoteRequest-emulator-v2
     QuoteResponseTable:
       Type: 'AWS::DynamoDB::Table'
       Properties:
@@ -159,7 +172,7 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: QuoteResponse-emulator
+        TableName: QuoteResponse-emulator-v2
     AppSyncLambdaServiceRole:
       Type: "AWS::IAM::Role"
       Properties:
@@ -219,7 +232,7 @@ resources:
                     - "dynamodb:Scan"
                     - "dynamodb:UpdateItem"
                   Resource:
-                    - "arn:aws:dynamodb:us-east-1:${self:custom.accountId}:table/QuoteResponse-emulator"
-                    - "arn:aws:dynamodb:us-east-1:${self:custom.accountId}:table/QuoteResponse-emulator/*"
-                    - "arn:aws:dynamodb:us-east-1:${self:custom.accountId}:table/QuoteRequest-emulator"
-                    - "arn:aws:dynamodb:us-east-1:${self:custom.accountId}:table/QuoteRequest-emulator/*"
+                    - "arn:aws:dynamodb:us-east-1:${self:custom.accountId}:table/QuoteResponse-emulator-v2"
+                    - "arn:aws:dynamodb:us-east-1:${self:custom.accountId}:table/QuoteResponse-emulator-v2/*"
+                    - "arn:aws:dynamodb:us-east-1:${self:custom.accountId}:table/QuoteRequest-emulator-v2"
+                    - "arn:aws:dynamodb:us-east-1:${self:custom.accountId}:table/QuoteRequest-emulator-v2/*"

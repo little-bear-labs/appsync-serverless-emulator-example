@@ -1,1 +1,8 @@
-$utils.toJson($context.identity)
+{
+  "sub": $util.toJson($context.identity.sub),
+  "issuer": $util.toJson($context.identity.issuer),
+  "username": $util.toJson($context.identity.username),
+  "sourceIp": $util.toJson($context.identity.sourceIp),
+  "claims": $util.toJson($util.toJson($context.identity.claims)),
+  "groups": $util.toJson($context.identity.claims.get("cognito:groups"))
+}
