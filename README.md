@@ -1,4 +1,5 @@
 # Appsync Emulator test repo
+[![Build Status](https://travis-ci.com/ConduitVC/appsync-serverless-emulator-example.svg?branch=master)](https://travis-ci.com/ConduitVC/appsync-serverless-emulator-example)
 
 This repository contains the test code for the appsync emulator.
 
