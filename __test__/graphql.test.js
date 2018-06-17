@@ -18,10 +18,13 @@ describe("graphql", () => {
 
   afterEach(async () => server.close());
 
-  it("Query.cognitoInfo", async () => {
+  it("None & Lambda examples", async () => {
     const cognito = await client.query({
       query: gql`
         query info {
+          lambda {
+            test
+          }
           cognitoInfo {
             username
           }
@@ -34,10 +37,56 @@ describe("graphql", () => {
         cognitoInfo: {
           username: "d9aeaadc-e677-4c65-9d69-a4d6f3a7df86",
           __typename: "CognitoInfo"
+        },
+        lambda: {
+          test: 'yup',
         }
       },
       loading: false,
       stale: false
     });
   });
+
+  it ('subscription / mutation / dynamodb', async () => {
+    const sub = await client.subscribe({
+      query: gql`
+        subscription sub {
+          subscribeToPutQuoteRequest {
+            id
+            commodity
+            amount
+          }
+        }
+      `,
+    });
+
+    const waiting = new Promise(accept => sub.subscribe(accept));
+    await client.mutate({
+      mutation: gql`
+        mutation test($input: QuoteRequestInput!) {
+          putQuoteRequest(input: $input) {
+            id
+            commodity
+            amount
+          }
+        }
+      `,
+      variables: {
+        input: {
+          commodity: 'foo',
+          amount: 100.5,
+        },
+      },
+    });
+
+    const event = await waiting;
+    expect(event).toMatchObject({
+      data: {
+        subscribeToPutQuoteRequest: {
+          amount: 100.5,
+          commodity: 'foo',
+        },
+      },
+    });
+  })
 });
