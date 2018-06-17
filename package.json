@@ -13,7 +13,8 @@
   },
   "scripts": {
     "start": "neutrino start",
-    "start-emulator": "docker-compose up -d && appsync-emulator --port 62222"
+    "start-emulator": "docker-compose up -d && appsync-emulator --port 62222",
+    "test": "docker-compose up -d && jest --forceExit"
   },
   "dependencies": {
     "aws-amplify": "0.3.3",
