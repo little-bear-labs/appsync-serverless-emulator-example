@@ -42,3 +42,8 @@ The appsync emulator supports the following source types:
 
 The code in src/ contains a very simple test app using `aws-amplify` for
 authentication.
+
+## TODO
+
+  - reduce the number of operations which require a server restart.
+  - example that includes automated tests via jest.
