@@ -47,3 +47,7 @@ The appsync emulator supports the following source types:
 
 The code in src/ contains a very simple test app using `aws-amplify` for
 authentication.
+
+# Limitations
+
+  - currently requires dynamodb to run on predefined port (61023) and cannot be changed.
