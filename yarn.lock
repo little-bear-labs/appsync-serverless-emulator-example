@@ -92,9 +92,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@conduitvc/appsync-emulator-serverless@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@conduitvc/appsync-emulator-serverless/-/appsync-emulator-serverless-0.2.2.tgz#358800a3614ca56a8073b32f4ee3a6a1431c9e68"
+"@conduitvc/appsync-emulator-serverless@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@conduitvc/appsync-emulator-serverless/-/appsync-emulator-serverless-0.3.0.tgz#3d6b9ef11cfadde7880bd6948d86303d12d4526a"
   dependencies:
     "@conduitvc/aws-utils" "^1.2.0"
     argparse "^1.0.10"

@@ -38,7 +38,7 @@ The appsync emulator supports the following source types:
 # Things to try
 
   - VTL can be changed without restarting the emulator
-  - edit the lambda function (requires server restart atm)
+  - lambda function can be changed without restarting the server
   - add new endpoints (requires server restart)
   - subscriptions
   - mutations
@@ -47,7 +47,3 @@ The appsync emulator supports the following source types:
 
 The code in src/ contains a very simple test app using `aws-amplify` for
 authentication.
-
-## TODO
-
-  - reduce the number of operations which require a server restart.
