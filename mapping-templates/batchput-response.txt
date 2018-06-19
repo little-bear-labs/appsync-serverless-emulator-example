@@ -5,6 +5,6 @@
 #end
 
 {
-  "request": $util.toJson($ctx.result.data["QuoteRequest-emulator"][0]),
-  "response": $util.toJson($ctx.result.data["QuoteResponse-emulator"][0]),
+  "request": $util.toJson($ctx.result.data["QuoteRequest-emulator-v2"][0]),
+  "response": $util.toJson($ctx.result.data["QuoteResponse-emulator-v2"][0]),
 }

@@ -162,7 +162,7 @@ const showCognito = gql`
 `;
 
 const ShowCognito = () => (
-  <Query query={showCognito} cachePolicy="network-only">
+  <Query query={showCognito} fetchPolicy="network-only">
     {({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>}
   </Query>
 );
