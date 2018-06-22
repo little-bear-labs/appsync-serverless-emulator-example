@@ -1,0 +1,4 @@
+$utils.toJson($context.result)
+##{
+##  "test": "the vtl"
+##}

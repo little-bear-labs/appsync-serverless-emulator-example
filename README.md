@@ -9,6 +9,10 @@ the configuration and deployment model for appsync.
 This is _alpha_ quality and we expect bugs. To enable logging export the following
 environment variable: `NODE_DEBUG=appsync*`
 
+General note the dynamodb emulator is downloaded when this package is installed. 
+As a result java is required dependency on the machine but we do not require
+that anyone download the dynamodb emulator itself.
+
 ## Usage
 
 After running `yarn`
@@ -47,7 +51,3 @@ The appsync emulator supports the following source types:
 
 The code in src/ contains a very simple test app using `aws-amplify` for
 authentication.
-
-# Limitations
-
-  - currently requires dynamodb to run on predefined port (61023) and cannot be changed.

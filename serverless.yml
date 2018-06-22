@@ -115,7 +115,7 @@ custom:
         field: lambda
         type: Query
         request: lambda-request.vtl
-        response: result-response.txt
+        response: lambda-response.txt
     serviceRole: "AppSyncServiceRole"
     dataSources:
       - type: AMAZON_DYNAMODB

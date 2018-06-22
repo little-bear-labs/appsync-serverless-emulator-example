@@ -167,13 +167,36 @@ const ShowCognito = () => (
   </Query>
 );
 
+const showLambda = gql`
+  query lambda {
+    lambda {
+      test
+    }
+  }
+`;
+
+const ShowLambda = () => (
+  <Query query={showLambda} fetchPolicy="network-only">
+    {({ data, refetch }) => (
+      <div>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
+        <button onClick={() => refetch()}>REFETCH</button>
+      </div>
+    )}
+  </Query>
+);
+
 export default class Roundtrip extends React.Component {
   render() {
     return (
       <div>
         <div>
-          <h1>Cognito</h1>
+          <h1>Cognito (None)</h1>
           <ShowCognito />
+        </div>
+        <div>
+          <h1>Lambda (Lambda)</h1>
+          <ShowLambda />
         </div>
         <div>
           <h1>Create quote request </h1>
