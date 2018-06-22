@@ -14,7 +14,7 @@
   "scripts": {
     "start": "neutrino start",
     "start-emulator": "appsync-emulator --port 62222",
-    "test": "jest --forceExit"
+    "test": "jest --detectOpenHandles"
   },
   "dependencies": {
     "aws-amplify": "0.3.3",
