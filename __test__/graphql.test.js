@@ -1,25 +1,13 @@
 const gql = require("graphql-tag");
 const { AWSAppSyncClient } = require("aws-appsync");
-const {
-  create,
-  connect
-} = require("@conduitvc/appsync-emulator-serverless/tester");
+const createAppSync = require("@conduitvc/appsync-emulator-serverless/jest");
 global.fetch = require("node-fetch");
 
 describe("graphql", () => {
-  let server, client;
-  beforeEach(async () => {
-    server = await create();
-    client = connect(
-      server,
-      AWSAppSyncClient
-    );
-  });
-
-  afterEach(async () => server.close());
+  const appsync = createAppSync();
 
   it("None & Lambda examples", async () => {
-    const cognito = await client.query({
+    const cognito = await appsync.client.query({
       query: gql`
         query info {
           lambda {
@@ -48,7 +36,7 @@ describe("graphql", () => {
   });
 
   it ('subscription / mutation / dynamodb', async () => {
-    const sub = await client.subscribe({
+    const sub = await appsync.client.subscribe({
       query: gql`
         subscription sub {
           subscribeToPutQuoteRequest {
@@ -61,7 +49,7 @@ describe("graphql", () => {
     });
 
     const waiting = new Promise(accept => sub.subscribe(accept));
-    await client.mutate({
+    await appsync.client.mutate({
       mutation: gql`
         mutation test($input: QuoteRequestInput!) {
           putQuoteRequest(input: $input) {
