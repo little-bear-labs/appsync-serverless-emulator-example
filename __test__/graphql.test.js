@@ -6,7 +6,7 @@ global.fetch = require("node-fetch");
 describe("graphql", () => {
   beforeAll(() => {
     // first time we spin up emulator is slow but it's faster after.
-    jest.setTimeout(20 * 1000);
+    jest.setTimeout(60 * 1000);
   });
 
   const appsync = createAppSync();
