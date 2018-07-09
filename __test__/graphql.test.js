@@ -6,6 +6,11 @@ global.fetch = require("node-fetch");
 describe("graphql", () => {
   const appsync = createAppSync();
 
+  beforeEach(() => {
+    // first time we spin up emulator is slow but it's faster after.
+    jest.setTimeout(20 * 1000);
+  })
+
   it("None & Lambda examples", async () => {
     const cognito = await appsync.client.query({
       query: gql`
