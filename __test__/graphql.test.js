@@ -4,12 +4,12 @@ const createAppSync = require("@conduitvc/appsync-emulator-serverless/jest");
 global.fetch = require("node-fetch");
 
 describe("graphql", () => {
-  const appsync = createAppSync();
-
-  beforeEach(() => {
+  beforeAll(() => {
     // first time we spin up emulator is slow but it's faster after.
     jest.setTimeout(20 * 1000);
-  })
+  });
+
+  const appsync = createAppSync();
 
   it("None & Lambda examples", async () => {
     const cognito = await appsync.client.query({
