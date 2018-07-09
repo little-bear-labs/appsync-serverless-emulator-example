@@ -92,12 +92,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@conduitvc/appsync-emulator-serverless@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@conduitvc/appsync-emulator-serverless/-/appsync-emulator-serverless-0.4.0.tgz#7a1a8d5cd6a7a6e769c6cd790986a28d8db98366"
+"@conduitvc/appsync-emulator-serverless@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@conduitvc/appsync-emulator-serverless/-/appsync-emulator-serverless-0.5.0.tgz#860c816c2eeac292bca749ae6cb6567482ce3421"
   dependencies:
     "@conduitvc/aws-utils" "^1.2.0"
-    "@conduitvc/dynamodb-emulator" "^0.2.0"
+    "@conduitvc/dynamodb-emulator" "^0.4.0"
     argparse "^1.0.10"
     aws-sdk "^2.254.1"
     consola "^1.4.1"
@@ -143,16 +143,17 @@
     lodash.merge "^4.6.1"
     pkg-up "^2.0.0"
 
-"@conduitvc/dynamodb-emulator@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@conduitvc/dynamodb-emulator/-/dynamodb-emulator-0.2.0.tgz#b011c86bce749c3bad9b56b592898203101abdf9"
+"@conduitvc/dynamodb-emulator@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@conduitvc/dynamodb-emulator/-/dynamodb-emulator-0.4.0.tgz#5913bf769082a604bee95b087d8d287738712d8b"
   dependencies:
     download-cli "^1.1.1"
     event-to-promise "^0.8.0"
+    fs-ext "^1.2.1"
     logdown "^3.2.3"
+    object-hash "^1.3.0"
     port-pid "^0.0.6"
     portfinder "^1.0.13"
-    tree-kill "^1.2.0"
     wait-port "^0.2.2"
     which "^1.3.1"
 
@@ -4880,6 +4881,12 @@ fs-constants@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
 
+fs-ext@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/fs-ext/-/fs-ext-1.2.1.tgz#1c2c9c115e48a1af99374c7b9aa9d39019d5f409"
+  dependencies:
+    nan "^2.10.0"
+
 fs-ext@~0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/fs-ext/-/fs-ext-0.5.0.tgz#9c1f9a20b8e7e012e0a914b5e19132724f44f69e"
@@ -7879,7 +7886,7 @@ nan@2.3.5, nan@~2.3.0:
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.3.5.tgz#822a0dc266290ce4cd3a12282ca3e7e364668a08"
 
-nan@^2.0, nan@^2.9.2, nan@~2.10.0:
+nan@^2.0, nan@^2.10.0, nan@^2.9.2, nan@~2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
@@ -8313,7 +8320,7 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
-object-hash@^1.1.4, object-hash@^1.2.0:
+object-hash@^1.1.4, object-hash@^1.2.0, object-hash@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.3.0.tgz#76d9ba6ff113cf8efc0d996102851fe6723963e2"
 
@@ -11125,10 +11132,6 @@ tr46@^1.0.1:
 "traverse@>=0.3.0 <0.4":
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.3.9.tgz#717b8f220cc0bb7b44e40514c22b2e8bbc70d8b9"
-
-tree-kill@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.0.tgz#5846786237b4239014f05db156b643212d4c6f36"
 
 trim-newlines@^1.0.0:
   version "1.0.0"
