@@ -92,12 +92,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@conduitvc/appsync-emulator-serverless@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@conduitvc/appsync-emulator-serverless/-/appsync-emulator-serverless-0.6.0.tgz#138dffa166ef14647281ec9270e3ed85e5051b21"
+"@conduitvc/appsync-emulator-serverless@^0.6.7":
+  version "0.6.7"
+  resolved "https://registry.yarnpkg.com/@conduitvc/appsync-emulator-serverless/-/appsync-emulator-serverless-0.6.7.tgz#3627cf45532e2742739400478205acdd7bb72431"
   dependencies:
-    "@conduitvc/aws-utils" "^1.2.0"
-    "@conduitvc/dynamodb-emulator" "^0.5.0"
+    "@conduitvc/aws-utils" "^1.2.1"
+    "@conduitvc/dynamodb-emulator" "^0.5.3"
     argparse "^1.0.10"
     aws-sdk "^2.254.1"
     consola "^1.4.1"
@@ -122,9 +122,9 @@
     uuid "^3.2.1"
     velocityjs lightsofapollo/velocity.js#allow-own-keyset
 
-"@conduitvc/aws-utils@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@conduitvc/aws-utils/-/aws-utils-1.2.0.tgz#9fca77300d8cbd5be55c8f66a474f98056a4d66b"
+"@conduitvc/aws-utils@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@conduitvc/aws-utils/-/aws-utils-1.2.1.tgz#9ba07068c29e38d0cfab9ef1b98fe37a4b1c6cd0"
   dependencies:
     "@conduitvc/config" "^1.0.0"
     amazon-cognito-identity-js "^2.0.6"
@@ -143,9 +143,9 @@
     lodash.merge "^4.6.1"
     pkg-up "^2.0.0"
 
-"@conduitvc/dynamodb-emulator@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@conduitvc/dynamodb-emulator/-/dynamodb-emulator-0.5.0.tgz#a99af812687143bc23978a22f6d68fbba655e913"
+"@conduitvc/dynamodb-emulator@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@conduitvc/dynamodb-emulator/-/dynamodb-emulator-0.5.3.tgz#b6bcd668506c7eb0eee6690e1309491522e71f37"
   dependencies:
     download-cli "^1.1.1"
     event-to-promise "^0.8.0"
@@ -432,6 +432,10 @@
   version "2.0.47"
   resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.47.tgz#f49ba1dd1f189486beb6e1d070a850f6ab4bd521"
 
+"@types/async@2.0.49":
+  version "2.0.49"
+  resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.49.tgz#92e33d13f74c895cb9a7f38ba97db8431ed14bc0"
+
 "@types/graphql@0.10.2":
   version "0.10.2"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.10.2.tgz#d7c79acbaa17453b6681c80c34b38fcb10c4c08c"
@@ -459,6 +463,10 @@
 "@types/zen-observable@^0.5.3":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.5.3.tgz#91b728599544efbb7386d8b6633693a3c2e7ade5"
+
+"@types/zen-observable@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.0.tgz#8b63ab7f1aa5321248aad5ac890a485656dcea4d"
 
 abab@^1.0.4:
   version "1.0.4"
@@ -704,6 +712,12 @@ apollo-cache@^1.1.10, apollo-cache@^1.1.5:
   dependencies:
     apollo-utilities "^1.0.14"
 
+apollo-cache@^1.1.13:
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.16.tgz#0c7460ee8eff1898462979143b4e922aaba73cf8"
+  dependencies:
+    apollo-utilities "^1.0.20"
+
 apollo-client@2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.2.6.tgz#38b5a197976f3c22b63623c455d4c4606e420b66"
@@ -717,6 +731,20 @@ apollo-client@2.2.6:
     zen-observable "^0.7.0"
   optionalDependencies:
     "@types/async" "2.0.47"
+
+apollo-client@2.3.7:
+  version "2.3.7"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.3.7.tgz#891cd2392851f861a62fe334fa76fc629ed19fd3"
+  dependencies:
+    "@types/zen-observable" "^0.8.0"
+    apollo-cache "^1.1.13"
+    apollo-link "^1.0.0"
+    apollo-link-dedup "^1.0.0"
+    apollo-utilities "^1.0.17"
+    symbol-observable "^1.0.2"
+    zen-observable "^0.8.0"
+  optionalDependencies:
+    "@types/async" "2.0.49"
 
 apollo-client@^1.9.2:
   version "1.9.3"
@@ -784,6 +812,12 @@ apollo-link@^1.0.0, apollo-link@^1.2.2:
 apollo-utilities@^1.0.0, apollo-utilities@^1.0.1, apollo-utilities@^1.0.14, apollo-utilities@^1.0.9:
   version "1.0.14"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.14.tgz#39dc94b6fe827ab2857167545c7dafc11c2b6174"
+  dependencies:
+    fast-json-stable-stringify "^2.0.0"
+
+apollo-utilities@^1.0.17, apollo-utilities@^1.0.20:
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.20.tgz#b14318686cb67838279fb5f009cca0ec97a4d140"
   dependencies:
     fast-json-stable-stringify "^2.0.0"
 
@@ -1077,7 +1111,7 @@ aws-appsync-react@^1.0.14:
     aws-appsync "^1.0.23"
     prop-types "^15.6.0"
 
-aws-appsync@ConduitVC/aws-appsync, aws-appsync@^1.0.23:
+aws-appsync@^1.0.23:
   version "1.0.23"
   resolved "https://codeload.github.com/ConduitVC/aws-appsync/tar.gz/7b9fb5189c4f0d4dbe5e2374d33a489fbde59159"
   dependencies:
@@ -1093,6 +1127,24 @@ aws-appsync@ConduitVC/aws-appsync, aws-appsync@^1.0.23:
     redux-thunk "^2.2.0"
     setimmediate "^1.0.5"
     url "^0.11.0"
+
+aws-appsync@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/aws-appsync/-/aws-appsync-1.3.4.tgz#cff1c2b496e1054f6340538003b689552be43c57"
+  dependencies:
+    "@redux-offline/redux-offline" "^2.2.1"
+    apollo-cache-inmemory "^1.0.0"
+    apollo-client "2.3.7"
+    apollo-link "^1.0.0"
+    apollo-link-context "^1.0.0"
+    apollo-link-http "^1.0.0"
+    aws-sdk "^2.139.0"
+    graphql "^0.11.7"
+    redux "^3.7.2"
+    redux-thunk "^2.2.0"
+    setimmediate "^1.0.5"
+    url "^0.11.0"
+    uuid "3.x"
 
 aws-sdk@2.198.0:
   version "2.198.0"
@@ -11467,6 +11519,10 @@ uuid@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
+uuid@3.x:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+
 uuid@^2.0.1, uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
@@ -11490,7 +11546,7 @@ vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
-velocityjs@lightsofapollo/velocity.js#allow-own-keyset:
+"velocityjs@github:lightsofapollo/velocity.js#allow-own-keyset":
   version "1.1.0"
   resolved "https://codeload.github.com/lightsofapollo/velocity.js/tar.gz/715e684f90c6ad0f57d88fb830dce77cabddbc8d"
 

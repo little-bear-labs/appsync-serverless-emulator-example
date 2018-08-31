@@ -1,3 +1,4 @@
+// @jest-environment node
 const gql = require("graphql-tag");
 const { AWSAppSyncClient } = require("aws-appsync");
 const createAppSync = require("@conduitvc/appsync-emulator-serverless/jest");
