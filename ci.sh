@@ -8,4 +8,4 @@ yarn test
 echo "Testing with npm install"
 rm -rf node_modules
 npm i 
-DEBUG=1 yarn test
+DEBUG=1 npm test
