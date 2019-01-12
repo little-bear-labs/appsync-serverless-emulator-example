@@ -7,5 +7,5 @@ APPSYNC_EMULATOR_LOG=1 yarn test
 # but not with npm.
 echo "Testing with npm install"
 rm -rf node_modules
-APPSYNC_EMULATOR_LOG=1 npm i 
-DEBUG=1 npm test
+npm i
+APPSYNC_EMULATOR_LOG=1 DEBUG=1 npm test
