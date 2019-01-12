@@ -7,5 +7,5 @@ yarn test
 # but not with npm.
 echo "Testing with npm install"
 rm -rf node_modules
-npm ls --depth 2
-yarn test
+npm i 
+DEBUG=1 yarn test
