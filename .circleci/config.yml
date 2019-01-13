@@ -47,7 +47,7 @@ jobs:
             - ./node_modules
       - run:
           name: test
-          command: npm test
+          command: DEBUG=*,-babel npm test
 
 workflows:
   version: 2
