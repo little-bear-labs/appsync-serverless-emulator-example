@@ -6,6 +6,9 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
+      - run:
+          name: clear-cache
+          command: rm -rf ~/.cache/yarn
       - restore_cache:
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
