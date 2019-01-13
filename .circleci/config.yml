@@ -11,7 +11,7 @@ jobs:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: add-java
-          command: apt-get update && apt-get default-jre
+          command: sudo apt-get update && sudo apt-get default-jre
       - run:
           name: Install Dependencies
           command: yarn
@@ -34,7 +34,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: add-java
-          command: apt-get update && apt-get default-jre
+          command: sudo apt-get update && sudo apt-get default-jre
       - run:
           name: npm-install
           command: npm install
