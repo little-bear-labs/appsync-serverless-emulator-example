@@ -51,3 +51,5 @@ The appsync emulator supports the following source types:
 
 The code in src/ contains a very simple test app using `aws-amplify` for
 authentication.
+
+

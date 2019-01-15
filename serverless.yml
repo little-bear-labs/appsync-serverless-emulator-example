@@ -1,5 +1,5 @@
 service: appsync-bootstrap-test-v2
-frameworkVersion: '>=1.21.0 <2.0.0'
+frameworkVersion: ">=1.21.0 <2.0.0"
 provider:
   name: aws
   runtime: nodejs8.10
@@ -122,13 +122,13 @@ custom:
         name: QuoteRequest
         description: QuoteRequest description
         config:
-          tableName: "QuoteRequest-emulator-v2"
+          tableName: { Ref: "QuoteRequestTable" }
           serviceRoleArn: { Fn::GetAtt: [AppSyncDynamoDBServiceRole, Arn] }
       - type: AMAZON_DYNAMODB
         name: QuoteResponse
         description: QuoteResponse description
         config:
-          tableName: QuoteResponse-emulator-v2
+          tableName: { Ref: "QuoteResponseTable" }
           serviceRoleArn: { Fn::GetAtt: [AppSyncDynamoDBServiceRole, Arn] }
       - type: NONE
         name: SubscriberPassthrough
@@ -137,18 +137,18 @@ custom:
           serviceRoleArn: { Fn::GetAtt: [AppSyncDynamoDBServiceRole, Arn] }
       - type: AWS_LAMBDA
         name: TestLambda
-        description: 'Lambda DataSource'
+        description: "Lambda DataSource"
         config:
           lambdaFunctionArn: { Fn::GetAtt: [GraphqlLambdaFunction, Arn] }
           serviceRoleArn: { Fn::GetAtt: [AppSyncLambdaServiceRole, Arn] }
           functionName: graphql
 functions:
-    graphql:
-        handler: handler.graphql
+  graphql:
+    handler: handler.graphql
 resources:
   Resources:
     QuoteRequestTable:
-      Type: 'AWS::DynamoDB::Table'
+      Type: "AWS::DynamoDB::Table"
       Properties:
         KeySchema:
           - AttributeName: id
@@ -161,7 +161,7 @@ resources:
           WriteCapacityUnits: 1
         TableName: QuoteRequest-emulator-v2
     QuoteResponseTable:
-      Type: 'AWS::DynamoDB::Table'
+      Type: "AWS::DynamoDB::Table"
       Properties:
         KeySchema:
           - AttributeName: id
@@ -180,21 +180,18 @@ resources:
         AssumeRolePolicyDocument:
           Version: "2012-10-17"
           Statement:
-            -
-              Effect: "Allow"
+            - Effect: "Allow"
               Principal:
                 Service:
                   - "appsync.amazonaws.com"
               Action:
                 - "sts:AssumeRole"
         Policies:
-          -
-            PolicyName: "Lambda-${self:custom.appSync.serviceRole}-Policy"
+          - PolicyName: "Lambda-${self:custom.appSync.serviceRole}-Policy"
             PolicyDocument:
               Version: "2012-10-17"
               Statement:
-                -
-                  Effect: "Allow"
+                - Effect: "Allow"
                   Action:
                     - "lambda:invokeFunction"
                   Resource:
@@ -207,21 +204,18 @@ resources:
         AssumeRolePolicyDocument:
           Version: "2012-10-17"
           Statement:
-            -
-              Effect: "Allow"
+            - Effect: "Allow"
               Principal:
                 Service:
                   - "appsync.amazonaws.com"
               Action:
                 - "sts:AssumeRole"
         Policies:
-          -
-            PolicyName: "Dynamo-${self:custom.appSync.serviceRole}-${self:service}-Policy"
+          - PolicyName: "Dynamo-${self:custom.appSync.serviceRole}-${self:service}-Policy"
             PolicyDocument:
               Version: "2012-10-17"
               Statement:
-                -
-                  Effect: "Allow"
+                - Effect: "Allow"
                   Action:
                     - "dynamodb:Query"
                     - "dynamodb:BatchGetItem"

@@ -33,7 +33,7 @@ describe("graphql", () => {
           __typename: "CognitoInfo"
         },
         lambda: {
-          test: 'yup',
+          test: "yup"
         }
       },
       loading: false,
@@ -41,7 +41,7 @@ describe("graphql", () => {
     });
   });
 
-  it ('subscription / mutation / dynamodb', async () => {
+  it("subscription / mutation / dynamodb", async () => {
     const sub = await appsync.client.subscribe({
       query: gql`
         subscription sub {
@@ -51,7 +51,7 @@ describe("graphql", () => {
             amount
           }
         }
-      `,
+      `
     });
 
     const waiting = new Promise(accept => sub.subscribe(accept));
@@ -67,10 +67,10 @@ describe("graphql", () => {
       `,
       variables: {
         input: {
-          commodity: 'foo',
-          amount: 100.5,
-        },
-      },
+          commodity: "foo",
+          amount: 100.5
+        }
+      }
     });
 
     const event = await waiting;
@@ -78,9 +78,9 @@ describe("graphql", () => {
       data: {
         subscribeToPutQuoteRequest: {
           amount: 100.5,
-          commodity: 'foo',
-        },
-      },
+          commodity: "foo"
+        }
+      }
     });
-  })
+  });
 });
