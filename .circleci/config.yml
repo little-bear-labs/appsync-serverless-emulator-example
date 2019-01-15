@@ -14,7 +14,11 @@ jobs:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: add-java
-          command: sudo apt-get update && sudo apt-get install default-jre
+          command: |
+            sudo add-apt-repository ppa:linuxuprising/java &&
+            sudo apt-get update &&
+            sudo apt-get install oracle-java10-installer &&
+            sudo apt-get install oracle-java10-set-default
       - run:
           name: Install Dependencies
           command: yarn
