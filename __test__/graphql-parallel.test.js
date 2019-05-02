@@ -4,6 +4,7 @@ const { AWSAppSyncClient } = require("aws-appsync");
 const createAppSync = require("@conduitvc/appsync-emulator-serverless/jest");
 global.fetch = require("node-fetch");
 
+// This test exists 100% to run same examples in graphl.test.js but in parallel with them.
 describe("graphql", () => {
   beforeAll(() => {
     // first time we spin up emulator is slow but it's faster after.
