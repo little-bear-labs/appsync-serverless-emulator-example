@@ -6,4 +6,4 @@
 echo "Testing with npm install"
 rm -rf node_modules
 npm i
-DEBUG=* yarn test
+DEBUG=*,-babel* yarn test
