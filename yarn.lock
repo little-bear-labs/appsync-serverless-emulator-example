@@ -7510,8 +7510,8 @@ mqtt-connection@^2.0.0, mqtt-connection@^2.1.1:
     through2 "^0.6.3"
 
 mqtt-packet@^3.0.0, mqtt-packet@^3.4.7:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/mqtt-packet/-/mqtt-packet-3.5.0.tgz#8b2953410b89e17981ee2ce63a33e73785109d9f"
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/mqtt-packet/-/mqtt-packet-3.5.1.tgz#49b3688478ca3325fe45841fad7c88bc31042aeb"
   dependencies:
     bl "^1.0.0"
     inherits "^2.0.1"
